@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './index.css';
 
 import App from './App';
+import SpacesIndex from './components/spaces_index';
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -11,6 +12,7 @@ ReactDOM.render(
   <BrowserRouter>
     <div>
       <Switch>
+        <Route path="/spaces" component={SpacesIndex} />
         <Route path="/" component={App} />
       </Switch>
     </div>
