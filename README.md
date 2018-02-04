@@ -15,9 +15,15 @@ Mockup
 ![alt tag](images/App.png)
 >
 **all spaces**
+>
 ![alt tag](images/AllSpaces.png)
 >
+**all spaces (*component breakdown*)**
+>
+![alt tag](images/AllSpacesBreakdown.png)
+>
 **individual space**
+>
 ![alt tag](images/IndvSpace.png)
 >
 
@@ -45,6 +51,7 @@ Technologies Used
 - [Heroku](https://heroku.com/)
 - [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
 - [axios](https://github.com/axios/axios)
+- [react-google-maps](https://github.com/tomchentw/react-google-maps)
 
 ----------
 
