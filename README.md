@@ -1,4 +1,5 @@
 
+
 P.O.P.O.S.
 ===================
 > Building a Single Page Application in React that shows all of San Francisco's Privately Owned Public Open Spaces.
@@ -12,8 +13,15 @@ Mockup
 **landing page**
 >
 ![alt tag](images/App.png)
+>
+**all spaces**
 ![alt tag](images/AllSpaces.png)
 >
+**individual space**
+![alt tag](images/IndvSpace.png)
+>
+
+
 
 ----------
 
