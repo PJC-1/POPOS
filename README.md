@@ -36,16 +36,53 @@ User Stories
 
 Technologies Used
 -------------
->  [Reactjs](https://reactjs.org/)
->  [React Router](https://reacttraining.com/react-router/)
->  [nodejs](https://nodejs.org/en/)
->  [expressjs](https://expressjs.com/)
->  [mongoDB](https://www.mongodb.com/)
->  [Heroku](https://heroku.com/)
->  [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
->  [axios](https://github.com/axios/axios)
+>
+ - [Reactjs](https://reactjs.org/)
+- [React Router](https://reacttraining.com/react-router/)
+- [nodejs](https://nodejs.org/en/)
+- [expressjs](https://expressjs.com/)
+- [mongoDB](https://www.mongodb.com/)
+- [Heroku](https://heroku.com/)
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
+- [axios](https://github.com/axios/axios)
 
 ----------
+
+React Router DOM v4
+-------------
+>
+**BrowserRouter**
+>
+> One of the high-level routers for client side React apps, that makes use of *HTML5 history API* to sync your UI with the current browser's url path (*i.e. window.location*).
+>
+> If you are using a dynamic server that can handle dynamic URLs then you need to use the **BrowserRouter** component.
+>  
+>  A good article that covers *BrowserRouter*: [React Router DOM v4 Tutorial](https://www.techiediaries.com/react-router-dom-v4/) by *Techiediaries*.
+>  
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/BrowserRouter.md)
+>
+----------
+>
+**Switch**
+>
+> Renders the first ```<Route``` or ```<Redirect>``` that matches the location.
+>  
+> ```<Switch>``` is unique in that it renders a route *exclusively*. In contrast, every ```<Route>``` that matches the location renders *inclusively*.
+>
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Switch.md)
+>
+----------
+>
+**Route**
+>
+> The *Route* component is perhaps the most important component in *React Router* to understand and learn the use well.
+>  
+> Its most basic responsibility is to render some UI when a location matches the route's ```path```.
+>
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md)
+>
+----------
+
 
 
 Helpful Links
@@ -53,7 +90,6 @@ Helpful Links
 >  
 > [DataSF](https://data.sfgov.org) (api)
 >
-> [React Router Route.md](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md) (react-router)
 >
 
 ----------
