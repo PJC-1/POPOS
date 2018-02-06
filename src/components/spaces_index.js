@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import SpaceList from './space_list';
 
 class SpacesIndex extends Component {
@@ -8,6 +9,14 @@ class SpacesIndex extends Component {
     this.state = {
       spaces: []
     };
+
+    this.fetchSpaces();
+  }
+
+  fetchSpaces() {
+    axios.get("https://data.sfgov.org/resource/3ub7-d4yy.json")
+    .then(r => console.log(r.data))
+    .catch(err => console.log(err))
   }
 
   render() {
