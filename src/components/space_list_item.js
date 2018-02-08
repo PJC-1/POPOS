@@ -1,10 +1,10 @@
 import React from 'react';
 
-const SpaceListItem = props => {
+const SpaceListItem = ({ space }) => {
   return (
-    <div>
-      space list item
-    </div>
+    <li>
+      {space.popos_addr}
+    </li>
   );
 };
 
