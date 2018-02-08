@@ -25,7 +25,7 @@ class SpacesIndex extends Component {
   render() {
     return (
       <div>
-        <SpaceList />
+        <SpaceList spaces={this.state.spaces}/>
       </div>
     );
   }
