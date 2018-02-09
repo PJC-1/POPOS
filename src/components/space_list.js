@@ -14,9 +14,9 @@ const SpaceList = props => {
   });
 
   return (
-    <div>
+    <ul>
       {spaceItems}
-    </div>
+    </ul>
   );
 }
 
