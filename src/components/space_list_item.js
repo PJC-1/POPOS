@@ -1,12 +1,12 @@
 import React from 'react';
 
 const SpaceListItem = ({ space }) => {
+  let hours = space.hours;
   let desc = space.descriptio;
+
   if(desc) {
     desc = desc.slice(0, 50) + '...';
   }
-
-  let hours = space.hours;
 
   return (
     <li>
@@ -15,11 +15,13 @@ const SpaceListItem = ({ space }) => {
         <div>
           <p>{space.type}</p>
         </div>
-        {hours ? (
-          <p>{space.hours}</p>
-        ) : (
-          <p>{space.hours_type}</p>
-        )}
+        <div>
+          {hours ? (
+            <p>{hours}</p>
+          ) : (
+            <p>{space.hours_type}</p>
+          )}
+        </div>
         <p>{desc}</p>
       </div>
     </li>
