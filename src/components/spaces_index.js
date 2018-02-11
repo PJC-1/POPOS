@@ -7,12 +7,13 @@ class SpacesIndex extends Component {
     super(props);
 
     this.state = {
-      spaces: []
+      spaces: null
     };
-
-    this.fetchSpaces();
   }
 
+  componentDidMount() {
+    this.fetchSpaces();
+  }
 
   fetchSpaces() {
     axios.get("https://data.sfgov.org/resource/3ub7-d4yy.json")
@@ -24,6 +25,9 @@ class SpacesIndex extends Component {
   }
 
   render() {
+    if (!this.state.spaces) {
+      return <div>Loading...</div>
+    }
     return (
       <div>
         <SpaceList spaces={this.state.spaces}/>
