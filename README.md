@@ -90,6 +90,49 @@ React Router DOM v4
 >
 ----------
 
+Blocks
+-------------
+>  
+> The data from the [DataSF](https://data.sfgov.org) api doesn't have an available id, which makes dealing with the show page a little bit more complicated. The ``` name ``` property seems to be unique among all the data, but might contain duplicates so querying the data might not be reliable.
+>
+>See request response:
+```
+// https://data.sfgov.org/resource/3ub7-d4yy.json?name=100 1st St
+[
+    {
+        "accessibil": "Indirect through lobby elevator?",
+        "art": "Yes",
+        "case_no": "1983.331",
+        "descriptio": "The large Sun Terrace features extensive landscaping and seating. Several art sculptures are featured, along with an elevated view of the street below. There is a 'grand' staircase (snippet) up to the Sun Terrace. Ground level arcade in front of building",
+        "food": "Y",
+        "food_servi": "At ground level",
+        "hours": "Ground level arcade space accessible at all times, Sun Terrace open during daylight hours.",
+        "hours_type": "Open At All Times",
+        "landscapin": "Trees and plants",
+        "location": "Sun Terrace is on second floor above adjoining parking garage SE of main building. Ground level arcade is on Mission Street side.",
+        "name": "100 1st St",
+        "popos_addr": "100 1st St",
+        "restrooms": "None observed",
+        "seating": "Y",
+        "seating_an": "Y",
+        "seating_no": "30 seats at 10 tables plus numerous areas to sit along built-in benches and planters, grassy areas.",
+        "source": "SPUR, DT Plan 2009, Motion",
+        "the_geom": {
+            "type": "Point",
+            "coordinates": [
+                -122.39797,
+                37.7891
+            ]
+        },
+        "type": "Sun Terrace, Indoor Park, Snippet",
+        "year": "1985"
+    }
+]
+```
+>
+>
+
+----------
 
 
 Helpful Links
