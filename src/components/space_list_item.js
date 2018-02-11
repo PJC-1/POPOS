@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SpaceListItem = ({ space }) => {
   let hours = space.hours;
@@ -11,7 +12,9 @@ const SpaceListItem = ({ space }) => {
   return (
     <li>
       <div>
-        <h2>{space.name}</h2>
+        <Link to={`/spaces/${space.name}`}>
+          {space.name}
+        </Link>
         <div>
           <p>{space.type}</p>
         </div>

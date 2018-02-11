@@ -12,6 +12,7 @@ class SpacesIndex extends Component {
 
     this.fetchSpaces();
   }
+  
 
   fetchSpaces() {
     axios.get("https://data.sfgov.org/resource/3ub7-d4yy.json")
