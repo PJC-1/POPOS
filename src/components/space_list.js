@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SpaceListItem from './space_list_item';
 
 const SpaceList = props => {
@@ -14,9 +15,14 @@ const SpaceList = props => {
   });
 
   return (
-    <ul>
-      {spaceItems}
-    </ul>
+    <div>
+      <Link to="/">
+        Home
+      </Link>
+      <ul>
+        {spaceItems}
+      </ul>
+    </div>
   );
 }
 

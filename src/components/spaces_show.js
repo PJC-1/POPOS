@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class SpacesShow extends Component {
@@ -26,10 +27,17 @@ class SpacesShow extends Component {
 
   render() {
     if (!this.state.space) {
-      return <div>Loading...</div>;
+      return <div>Loading...</div>
     }
     return (
-      <div>{this.state.space[0].name}</div>
+      <div>
+        <Link to="/spaces">
+          back
+        </Link>
+        <div>
+          {this.state.space[0].name}
+        </div>
+      </div>
     );
   }
 }
