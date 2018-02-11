@@ -12,7 +12,7 @@ class SpacesIndex extends Component {
 
     this.fetchSpaces();
   }
-  
+
 
   fetchSpaces() {
     axios.get("https://data.sfgov.org/resource/3ub7-d4yy.json")
@@ -20,7 +20,7 @@ class SpacesIndex extends Component {
       console.log(res.data);
       this.setState({ spaces: res.data })
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log(err));
   }
 
   render() {
