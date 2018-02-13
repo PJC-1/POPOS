@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import SpaceShowDetail from './space_show_detail';
 
 class SpacesShow extends Component {
   constructor(props) {
@@ -34,9 +35,7 @@ class SpacesShow extends Component {
         <Link to="/spaces">
           back
         </Link>
-        <div>
-          {this.state.space[0].name}
-        </div>
+        <SpaceShowDetail space={this.state.space} />
       </div>
     );
   }

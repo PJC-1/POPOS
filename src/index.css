@@ -4,6 +4,7 @@ body {
   font-family: monospace;
 }
 
+
 /*************/
 /* SpaceList */
 /*************/
@@ -27,10 +28,20 @@ body {
   flex-direction: column;
 }
 
+.space-item h2 > a {
+  color: #80ced6;
+  text-decoration: none;
+}
+
+.space-item h2 a:hover {
+  color: #f7786b;
+}
+
 .space-item-detail {
   box-sizing: border-box;
   width: 100%;
   padding: 30px;
+  background: #d5f4e6;
 }
 
 .space-item-detail h2 {
@@ -43,7 +54,13 @@ body {
 }
 
 .space-item-description {
+  color: #034f84;
   margin: 0;
   line-height: 1.5em;
   letter-spacing: 1px;
 }
+
+
+/**************/
+/* Space Show */
+/**************/
