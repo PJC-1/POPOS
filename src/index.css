@@ -1,5 +1,49 @@
 body {
-  margin: 0;
+  margin: 40px;
   padding: 0;
-  font-family: sans-serif;
+  font-family: monospace;
+}
+
+/*************/
+/* SpaceList */
+/*************/
+
+.space-list {
+  border: solid 2px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px;
+  margin: 0;
+}
+
+.space-item {
+  list-style: none;
+  box-sizing: border-box;
+  border: solid 2px black;
+  width: 35%;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.space-item-detail {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+}
+
+.space-item-detail h2 {
+  margin: 0;
+}
+
+.space-item-detail-div {
+  display: flex;
+  align-items: center;
+}
+
+.space-item-description {
+  margin: 0;
+  line-height: 1.5em;
+  letter-spacing: 1px;
 }

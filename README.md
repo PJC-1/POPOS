@@ -90,6 +90,15 @@ React Router DOM v4
 >
 ----------
 
+CSS Flexbox
+-------------
+>  The Flexbox Layout Module, makes it easier to design flexible responsive layout structure without having to use floats or positioning.
+>
+> [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) is a good article that goes over flexbox's main concepts.
+>   
+> Here is an article that contains several example use-cases, [CSS Flexbox Cheatsheet](https://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
+>
+
 Blocks
 -------------
 >  
