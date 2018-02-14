@@ -1,14 +1,46 @@
-body {
-  margin: 40px;
-  padding: 0;
-  font-family: monospace;
-}
-
-
 /*************/
 /* SpaceList */
 /*************/
 
+
+.space-list {
+  background: rgba(11,130,135,0.9);
+  list-style: none;
+  padding: 2.5% 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+  height: 100%;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  width: 39%;
+  z-index: 6;
+}
+
+.space-item {
+  border-bottom: 1px dashed #13caba;
+  color: #1de79d;
+  cursor: pointer;
+  display: block;
+  font-size: .9125rem;
+  position: relative;
+  padding: 1rem 5% 1rem 15%;
+  text-rendering: geometricPrecision;
+  transition: 0.3s background ease;
+  width: 80%;
+}
+
+.space-item h2 > a {
+  /* color: #1de79d; */
+  text-decoration: none;
+}
+
+.space-item:hover {
+  background: rgba(255,255,255,0.2);
+  transition: 0.3s background ease;
+}
+
+/*
 .space-list {
   border: solid 2px black;
   display: flex;
@@ -58,7 +90,7 @@ body {
   margin: 0;
   line-height: 1.5em;
   letter-spacing: 1px;
-}
+} */
 
 
 /**************/
