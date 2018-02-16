@@ -7,6 +7,11 @@ body {
 /* SpaceList */
 /*************/
 
+.space-wrapper {
+  font-family: 'Roboto Slab', serif;
+  margin: 50px;
+  background: rgba(11,130,135,0.9);
+}
 
 .space-list {
   background: rgba(11,130,135,0.9);
@@ -35,7 +40,7 @@ body {
 }
 
 .space-item h2 > a {
-  color: #3b3a30;
+  color: #414233;
   text-decoration: none;
 }
 
@@ -90,4 +95,26 @@ header {
   padding: 30px;
   border: 2px solid #414233;
   box-sizing: border-box;
+  margin: 15px;
+}
+
+.description {
+  color: #1de79d;
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  line-height: 1.5em;
+  letter-spacing: 1px;
+}
+
+.space-content-side {
+  width: 40%;
+}
+
+.space-side-div-two {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #414233;
+  border: 2px solid #414233;
+  margin: 15px;
 }
