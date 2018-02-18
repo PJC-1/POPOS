@@ -12,7 +12,14 @@ const SpaceListItem = ({ space }) => {
   return (
     <li className="space-item">
       <div className="space-item-detail">
-        <h2><Link to={`/spaces/${space.name}`}>{space.name}</Link></h2>
+        <h2>
+          <Link to={{
+            pathname: `/spaces/${space.name}`,
+            state: { space: space }
+          }}>
+            {space.name}
+          </Link>
+        </h2>
         <div className="space-item-detail-div">
           <p>{space.popos_addr}</p>
         </div>

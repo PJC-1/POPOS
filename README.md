@@ -89,8 +89,31 @@ React Router DOM v4
 > [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md)
 >
 ----------
-
-
+>
+**Link**
+> Provides declarative, accessible navigation around your application.
+>  
+>  **to:object**
+>  The *to* property in the **Link** component can accept an object that can have the following properties:
+>  - ```pathname```: A *string* representing the path to link to.
+>   - ```search```: A *string* represenation of query parameters.
+>    - ```hash```: A *hash* to put in the *URL*, e.g. ```#a-hash```.
+>   - ```state```: *State* to persist to the ```location```.
+>   ```
+>   // example
+>   <Link to={{
+>     pathname: '/courses',
+>     search: '?sort=name',
+>     hash: '#the-hash',  
+>     state: { fromDashboard: true }
+>   }}/>
+>   ```
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/Link.md)
+>
+>
+> Here is a stackoverflow article about [passing props with Link in React-Router](https://stackoverflow.com/questions/47287855/passing-props-with-link-in-react-router)
+>
+----------
 
 CSS Flexbox
 -------------
