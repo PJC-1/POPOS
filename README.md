@@ -110,6 +110,7 @@ React Router DOM v4
 >   ```
 > [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/Link.md)
 >
+> In order to access this state in your component, you can use the ```this.props.location.state``` or ```this.props.history.location.state```
 >
 > Here is a stackoverflow article about [passing props with Link in React-Router](https://stackoverflow.com/questions/47287855/passing-props-with-link-in-react-router)
 >
@@ -127,6 +128,7 @@ CSS Flexbox
 Blocks
 -------------
 >  
+**DataSF**
 > The data from the [DataSF](https://data.sfgov.org) api doesn't have an available id, which makes dealing with the show page a little bit more complicated. The ``` name ``` property seems to be unique among all the data, but might contain duplicates so querying the data might not be reliable.
 >
 >See request response:
@@ -164,7 +166,19 @@ Blocks
 ]
 ```
 >
+
+**Google Maps**
 >
+> While building out the ```GoogleMap``` component, I received this error: ```'google' is not defined  no-undef```
+>
+> After looking online, I found that two different solutions seemed to resolve the issue:
+> - One: when adding ```/* eslint-disable no-undef */ ``` to the top of my ```GoogleMap``` component file, the error went away and successfully displayed the map.
+> - Two: When creating a new instance of the ```Map``` using ```new window.google.maps.Map()``` instead of ```google.maps.Map()``` also resolved the error and displayed the map.
+>
+>
+>  Here is a [github issue](https://github.com/tomchentw/react-google-maps/issues/414)  that went over this problem.
+
+
 
 ----------
 

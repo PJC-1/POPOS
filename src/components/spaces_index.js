@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SpaceList from './space_list';
+import GoogleMap from './google_map';
 
 class SpacesIndex extends Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class SpacesIndex extends Component {
     return (
       <div>
         <SpaceList spaces={this.state.spaces}/>
+        <GoogleMap />
       </div>
     );
   }
