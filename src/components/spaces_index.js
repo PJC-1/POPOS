@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import SpaceList from './space_list';
-import GoogleMap from './google_map';
+import Map from './map';
 
 class SpacesIndex extends Component {
   constructor(props) {
@@ -26,13 +26,18 @@ class SpacesIndex extends Component {
   }
 
   render() {
+    const location = {
+      lat: 37.7916,
+      lng: -122.41509999
+    }
+
     if (!this.state.spaces) {
       return <div>Loading...</div>
     }
     return (
       <div>
         <SpaceList spaces={this.state.spaces}/>
-        <GoogleMap />
+        <Map center={location} markers={this.state.spaces}/>
       </div>
     );
   }
