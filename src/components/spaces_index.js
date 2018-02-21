@@ -26,18 +26,13 @@ class SpacesIndex extends Component {
   }
 
   render() {
-    const location = {
-      lat: 37.7916,
-      lng: -122.41509999
-    }
-
     if (!this.state.spaces) {
       return <div>Loading...</div>
     }
     return (
       <div>
         <SpaceList spaces={this.state.spaces}/>
-        <Map center={location} markers={this.state.spaces}/>
+        <Map markers={this.state.spaces}/>
       </div>
     );
   }
