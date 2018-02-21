@@ -6,12 +6,13 @@ class Map extends Component {
       zoom: 15,
       scrollwheel: false,
       center: {
-        lat: 37.7916,
-        lng: -122.41509999
-      }
+        lat: this.props.center.lat,
+        lng: this.props.center.lng
+    }
     });
   }
   render() {
+    console.log(this.props);
     return <div id="map" ref="map"></div>;
   }
 }
