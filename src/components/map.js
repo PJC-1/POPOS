@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
+import { markerStyle } from './marker_style';
 
-const Marker = ({ text }) => <div>{ text }</div>;
+const Marker = ({ text }) => <div style={markerStyle}>{ text }</div>;
 export default class Map extends Component {
   static defaultProps = {
-    center: { lat: 37.7916, lng: -122.41509999 },
-    zoom: 15
+    center: { lat: 37.7900, lng: -122.406 },
+    zoom: 16
   }
 render() {
   console.log(this.props);
@@ -17,7 +18,7 @@ render() {
       lat={marker.the_geom.coordinates[1]}
       lng={marker.the_geom.coordinates[0]}
       marker={marker}
-      text={marker.name}/>
+      text={index}/>
   ));
     return (
       <div id="map" className='google-map'>
