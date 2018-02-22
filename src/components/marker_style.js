@@ -1,5 +1,5 @@
-const K_WIDTH = 40;
-const K_HEIGHT = 40;
+const K_WIDTH = 30;
+const K_HEIGHT = 30;
 
 const markerStyle = {
   position: 'absolute',
@@ -8,14 +8,15 @@ const markerStyle = {
   left: -K_WIDTH / 2,
   top: -K_HEIGHT / 2,
 
-  border: '5px solid #f44336',
+  border: '5px solid #fe320f',
   borderRadius: K_HEIGHT,
   backgroundColor: 'white',
   textAlign: 'center',
-  color: '#3f51b5',
-  fontSize: 16,
+  color: 'black',
+  fontSize: 20,
   fontWeight: 'bold',
-  padding: 4
+  padding: 4,
+  paddingBottom: 0
 };
 
 export {markerStyle};
