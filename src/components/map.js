@@ -7,7 +7,11 @@ const Marker = ({ text }) => <div style={markerStyle}>{ text }</div>;
 export default class Map extends Component {
   static defaultProps = {
     center: { lat: 37.7900, lng: -122.406 },
-    zoom: 16
+    zoom: 16,
+    options: {
+      scrollwheel: false,
+      zoomControl: false
+    }
   }
 render() {
   console.log(this.props);
@@ -24,7 +28,8 @@ render() {
       <div id="map" className='google-map'>
         <GoogleMapReact
           defaultCenter={ this.props.center }
-          defaultZoom={ this.props.zoom }>
+          defaultZoom={ this.props.zoom }
+          options={ this.props.options }>
           {Markers}
         </GoogleMapReact>
       </div>
