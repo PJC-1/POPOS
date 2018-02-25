@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
+import SpaceShowHeader from './space_show_header';
 
 class SpaceShowDetail extends Component {
   render() {
     return (
       <div className="space-wrapper">
-        <header>
-          <h1 className="header-title">{this.props.space.name}</h1>
-          <p>{this.props.space.popos_addr}</p>
-        </header>
+        <SpaceShowHeader space={this.props.space}/>
         <div className="space-container">
           <div className="space-content-side">
             <div>
