@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SpaceShowHeader from './space_show_header';
+import SpaceShowContentSide from './space_show_content_side';
 
 class SpaceShowDetail extends Component {
   render() {
@@ -7,22 +8,7 @@ class SpaceShowDetail extends Component {
       <div className="space-wrapper">
         <SpaceShowHeader space={this.props.space}/>
         <div className="space-container">
-          <div className="space-content-side">
-            <div>
-              <div className="space-side-div-two">
-                <div className="space-detail-one">
-                  {this.props.space.hours ? (
-                    <p>{this.props.space.hours}</p>
-                  ) : (
-                    <p>{this.props.space.hours_type}</p>
-                  )}
-                </div>
-                <div className="space-detail-two">
-                  {this.props.space.type}
-                </div>
-              </div>
-            </div>
-          </div>
+          <SpaceShowContentSide space={this.props.space}/>
           <div className="space-content">
             <div className="space-content-sub">
               <div className="space-description">
