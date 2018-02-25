@@ -15,23 +15,43 @@ export default class Map extends Component {
   }
 render() {
   console.log(this.props);
-  const Markers = this.props.markers.map((marker, index) => (
-    <Marker
-      // required props
-      key={marker.name}
-      lat={marker.the_geom.coordinates[1]}
-      lng={marker.the_geom.coordinates[0]}
-      marker={marker} />
-  ));
-    return (
-      <div id="map" className='google-map'>
-        <GoogleMapReact
-          defaultCenter={ this.props.center }
-          defaultZoom={ this.props.zoom }
-          options={ this.props.options }>
-          {Markers}
-        </GoogleMapReact>
-      </div>
-    )
+  if (this.props.markers) {
+    const Markers = this.props.markers.map((marker, index) => (
+      <Marker
+        // required props
+        key={marker.name}
+        lat={marker.the_geom.coordinates[1]}
+        lng={marker.the_geom.coordinates[0]}
+        marker={marker} />
+    ));
+      return (
+        <div id="map" className='google-map'>
+          <GoogleMapReact
+            defaultCenter={ this.props.center }
+            defaultZoom={ this.props.zoom }
+            options={ this.props.options }>
+            {Markers}
+          </GoogleMapReact>
+        </div>
+      )
+  } else if (this.props.marker) {
+
+      return (
+        <div id="map" className='google-map'>
+          <GoogleMapReact
+            defaultCenter={ this.props.center }
+            defaultZoom={ this.props.zoom }
+            options={ this.props.options }>
+            <Marker
+              // required props
+              key={this.props.marker.name}
+              lat={this.props.marker.the_geom.coordinates[1]}
+              lng={this.props.marker.the_geom.coordinates[0]}
+              marker={this.props.marker} />
+          </GoogleMapReact>
+        </div>
+      )
+  }
+
   }
 }

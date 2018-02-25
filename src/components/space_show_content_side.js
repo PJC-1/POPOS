@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Map from './map';
 
 class SpaceShowContentSide extends Component {
   render() {
     return (
-      <div className="space-content-side">
-        <div>
+      <div className="space-content-subdiv">
+        <div className="map-container">
+          <Map marker={this.props.space} />
           <div className="space-side-div-two">
             <div className="space-detail-one">
               {this.props.space.hours ? (
