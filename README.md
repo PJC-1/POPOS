@@ -173,11 +173,16 @@ Blocks
 >
 > After looking online, I found that two different solutions seemed to resolve the issue:
 > - One: when adding ```/* eslint-disable no-undef */ ``` to the top of my ```GoogleMap``` component file, the error went away and successfully displayed the map.
-> - Two: When creating a new instance of the ```Map``` using ```new window.google.maps.Map()``` instead of ```google.maps.Map()``` also resolved the error and displayed the map.
+> - Two: When creating a new instance of the ```Map``` using ```new window.google.maps.Map()``` instead of ```new google.maps.Map()``` also resolved the error and displayed the map.
 >
 >
 >  Here is a [github issue](https://github.com/tomchentw/react-google-maps/issues/414)  that went over this problem.
-
+>
+>
+> Here is a [github issue](https://github.com/istarkov/google-map-react/issues/303) that addresses the error:
+> ```You have included the Google Maps API multiple times on this page. This may cause unexpected errors.```
+>  
+>
 
 
 ----------

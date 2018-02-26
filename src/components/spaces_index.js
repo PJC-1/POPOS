@@ -8,7 +8,8 @@ class SpacesIndex extends Component {
     super(props);
 
     this.state = {
-      spaces: null
+      spaces: null,
+      styleID: 'map',
     };
   }
 
@@ -32,7 +33,7 @@ class SpacesIndex extends Component {
     return (
       <div>
         <SpaceList spaces={this.state.spaces}/>
-        <Map markers={this.state.spaces}/>
+        <Map markers={this.state.spaces} style={this.state.styleID}/>
       </div>
     );
   }

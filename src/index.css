@@ -21,6 +21,17 @@ body {
     background: #58B;
 }
 
+.map-container {
+  color: #414233;
+  border: 2px solid #414233;
+}
+
+#map-space {
+  display: block;
+  min-width: 100%;
+  height: 300px;
+  border-bottom: 2px solid #414233;
+}
 
 /*************/
 /* SpaceList */
@@ -107,6 +118,16 @@ header {
   width: 60%;
 }
 
+.space-content-side {
+  width: 40%
+}
+
+.space-content-subdiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .space-content-sub {
   display: flex;
   flex-direction: column;
@@ -126,15 +147,6 @@ header {
   letter-spacing: 1px;
 }
 
-.space-content-side {
-  width: 40%;
-}
-
 .space-side-div-two {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  color: #414233;
-  border: 2px solid #414233;
-  margin: 15px;
+  padding: 30px;
 }
