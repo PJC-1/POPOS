@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import Map from './map';
 
+
 class SpaceShowContentSide extends Component {
+  static defaultProps = {
+    zoom: 14
+  }
   render() {
     return (
       <div className="space-content-subdiv">
         <div className="map-container">
-          <Map marker={this.props.space} style="map-space"/>
+          <Map marker={this.props.space} style="map-space" zoom={this.props.zoom}/>
           <div className="space-side-div-two">
             <div className="space-detail-one">
               {this.props.space.hours ? (
