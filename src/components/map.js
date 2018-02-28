@@ -7,7 +7,6 @@ const GOOGLE_MAP_API_KEY = 'AIzaSyDj7DG7DU8QGYE7KUwYkeukOIbUrWOniFE';
 const Marker = () => <div><img style={markerStyle} src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Map Marker"></img></div>;
 export default class Map extends Component {
   static defaultProps = {
-    center: { lat: 37.7870, lng: -122.406 },
     options: {
       scrollwheel: false,
       zoomControl: false
