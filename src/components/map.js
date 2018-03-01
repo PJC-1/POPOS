@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 import { markerStyle } from './marker_style';
+import { customMapStyle } from './customMapStyle';
 
 const GOOGLE_MAP_API_KEY = 'AIzaSyDj7DG7DU8QGYE7KUwYkeukOIbUrWOniFE';
 const Marker = () => <div><img style={markerStyle} src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Map Marker"></img></div>;
@@ -9,7 +10,8 @@ export default class Map extends Component {
   static defaultProps = {
     options: {
       scrollwheel: false,
-      zoomControl: false
+      zoomControl: false,
+      styles: customMapStyle
     }
   }
 render() {
