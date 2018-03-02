@@ -6,6 +6,9 @@ import { customMapStyle } from './customMapStyle';
 
 const GOOGLE_MAP_API_KEY = 'AIzaSyDj7DG7DU8QGYE7KUwYkeukOIbUrWOniFE';
 const Marker = () => <div><img style={markerStyle} src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" alt="Map Marker"></img></div>;
+
+const onClick = ({x, y, lat, lng, event}) => console.log(x, y, lat, lng, event)
+
 export default class Map extends Component {
   static defaultProps = {
     options: {
@@ -31,7 +34,8 @@ render() {
             bootstrapURLKeys={{ key: {GOOGLE_MAP_API_KEY} }}
             defaultCenter={ this.props.center }
             defaultZoom={ this.props.zoom }
-            options={ this.props.options }>
+            options={ this.props.options }
+            onClick={onClick}>
             {Markers}
           </GoogleMapReact>
         </div>
