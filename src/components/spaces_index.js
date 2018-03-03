@@ -28,6 +28,8 @@ class SpacesIndex extends Component {
     .catch(err => console.log(err));
   }
 
+  // I believe that SpaceList should receive the onMouseLeave and onMouseMove functions that will animate the markers.
+
   render() {
     if (!this.state.spaces) {
       return <div>Loading...</div>
