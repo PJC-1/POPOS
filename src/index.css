@@ -17,10 +17,6 @@ body {
   width: 100%;
 }
 
-#map {
-    background: #58B;
-}
-
 .map-container {
   color: #414233;
   border: 2px solid #414233;
