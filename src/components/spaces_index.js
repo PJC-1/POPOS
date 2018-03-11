@@ -11,7 +11,7 @@ class SpacesIndex extends Component {
       spaces: null,
       styleID: 'map',
       zoom: 15,
-      center: [37.7815, -122.406]
+      center: [37.7865, -122.406]
     };
   }
 
