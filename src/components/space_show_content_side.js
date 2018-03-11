@@ -6,7 +6,7 @@ class SpaceShowContentSide extends Component {
     super(props);
 
     this.state = {
-      zoom: 14,
+      zoom: 15,
       lat: null,
       lng: null,
       center: null

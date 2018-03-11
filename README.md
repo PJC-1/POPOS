@@ -329,7 +329,45 @@ SCOPE, ES6, and let
 
 Heroku
 -------------
+>
 >  
 > Using [mars Heroku Buildpack for create-react-app](https://github.com/mars/create-react-app-buildpack) for a fast and easy deploy.
 >
+
+>
+>Here is the following steps to deploy your react project created with *create-react-app*, from the *mars documentation*:
+>```
+>create-react-app $APP_NAME
+>cd $APP_NAME
+>git init
+>heroku create $APP_NAME --buildpack https://github.com/mars/create-react-app-buildpack.git
+>git add .
+>git commit -m "Start with create-react-app"
+>git push heroku master
+>heroku open
+>```
+>
+
+>
+>**Issue with React Router on Heroku**
+>
+> After successfully deploying to heroku with the mars heroku buildpack, the root URL was rendering, but other routers specified with *React Router* were not working.
+>  
+>  Creating a ```static.json``` file in the same directory as the ```package.json``` with the following contents:
+>
+>```
+>{
+>  "root": "build/",
+>  "clean_urls": false,
+>  "routes": {
+>    "/**": "index.html"
+>  }
+>}
+>```
+>
+>Basically the ```static.json``` file modifies Heroku's default webpack, so that it can handle client-side routing.
+>  
+>Here is a good stackoverflow that provides a solution and explanation to [react routing works in local machine but not heroku](https://stackoverflow.com/questions/41772411/react-routing-works-in-local-machine-but-not-heroku)
+>
+>This is also addressed in the *mars documentation* in [continue development](https://github.com/mars/create-react-app-buildpack#user-content-continue-development) under the section **Routing clean URLs**.
 >
