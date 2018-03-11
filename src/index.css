@@ -81,7 +81,6 @@ body {
   font-size: 1.2225rem;
 }
 
-
 /**************/
 /* Space Show */
 /**************/
@@ -145,4 +144,110 @@ header {
 
 .space-side-div-two {
   padding: 30px;
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media screen and (max-width: 1050px) {
+  header {
+    padding: 50px 75px 20px 75px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  header {
+    padding: 50px 50px 20px 50px;
+  }
+
+  div.space-container {
+    flex-direction: column;
+  }
+
+  .space-content,
+  .space-content-side {
+    width: 100%;
+  }
+
+  .space-description {
+    margin: 0;
+  }
+
+  .map-container {
+    box-sizing: border-box;
+    flex-direction: column;
+    display: flex;
+    border: 0;
+  }
+
+  .space-side-div-two {
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid #414233;
+  }
+
+}
+
+@media screen and (max-width: 775px)	{
+  header {
+    padding: 40px 30px;
+  }
+
+  .header-title {
+    font-size: 48px;
+    margin: 25px 0 20px 0;
+  }
+
+  .space-description {
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    margin: 0;
+  }
+
+  header {
+    padding: 10px 20px;
+  }
+
+  header p {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .space-container {
+    border-left: none;
+    border-right: none;
+  }
+
+  .space-side-div-two,
+  .space-description {
+    margin: 20px 0;
+  }
+
+
+  .header-title {
+    font-size: 36px;
+    margin: 15px 0 10px 0;
+  }
+
+  .map-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #map,
+  .map-subcontainer {
+    width: 100%;
+    margin: 0;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
 }

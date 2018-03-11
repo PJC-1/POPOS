@@ -1,331 +1,208 @@
-JavaScript: Understanding the Weird Parts
+
+
+P.O.P.O.S.
 ===================
->Following *Udemy Course* ["JavaScript: Understanding the Weird Parts"](https://www.udemy.com/understand-javascript).
->
->
->The following are notes from documentation, articles, and personal observations/opinions regarding concepts brought up in the course.
->
-
-Objects
--------------
->
->**Object:**
->
->*A collection of name value pairs*
->
->The simplest definition when talking about **Javascript**
->
-
->
-> **NAME/VALUE PAIR:**
->
->*A name which maps to a unique value*
->
->The name may be defined more than once, but only can have one value in any given **context**.
->That value may be more name/value pairs.
->
+> Building a Single Page Application in React that shows all of San Francisco's Privately Owned Public Open Spaces.
+> I will be using the data from [DataSF](https://data.sfgov.org/Culture-and-Recreation/Privately-Owned-Public-Open-Spaces/65ik-7wqd).
 >
 >
 
-The Global Environment and The Global Object
+Mockup
 -------------
 >  
->**Execution Context (Global)**
+**landing page**
 >
->The *Execution Context* will provide 2 things to you:
->- **Global Object**
->- Special variable **'this'**
+![alt tag](images/App.png)
 >
->The *javaScript Engine* creates these 2 things for you, whenever your code is run because the code is wrapped in **execution context** .
+**all spaces**
 >
->**Global Object (window)** = **'this'**
+![alt tag](images/AllSpaces.png)
 >
->*Global* in *javaScript* basically means: **"Not inside a Function"** .
+**all spaces (*component breakdown*)**
 >
->So, any *global* variable or function will be accessible on the *window* object.
->```
->// example code
->var a = 'Hello World';
->```
+![alt tag](images/AllSpacesBreakdown.png)
 >
->```
->// accessing the example code via chrome dev tools
->a
->"Hello World"
->window.a
->"Hello World"
->```
+**individual space**
+>
+![alt tag](images/IndvSpace.png)
 >
 
+----------
+
+User Stories
+-------------
 >
->**Execution Context** is Created (*CREATION PHASE*)
->In the creation phase we have:
->- Global Object
->- 'this'
->- Outer Environment
+- User should be able to use the search-field to search by address/cross street and receive the nearest *Spaces* to the specified location.
+- User should be able to navigate to the *All Spaces* page, where all *Spaces* will be displayed.
+- User should be able to click on a single *Space* (from the *All Spaces* page) and the user will be redirected to an individual *Space's* show page that contains specific details about this *Space*.
+
 >
->As the parser is running through your code, it recognizes where you have created *variables* and where you have created *functions*.
->It sets up the Memory Space for Variables and Functions, which is sometimes called "*Hoisting*"
+
+----------
+
+Technologies Used
+-------------
 >
->So those *variables* and *functions* exist in memory, and when you execute line by line it can access them.
->But, variables are treated differently from functions.
->Functions will be placed into *memory space* in there entirety, while variables are set in the *Execution Phase*.
->In other words, the variable, though in memory space will not be set to a specific value until it is in the execution phase. Until that time, it will be set to a placeholder value of ```undefined```.
+ - [Reactjs](https://reactjs.org/)
+- [React Router](https://reacttraining.com/react-router/)
+- [nodejs](https://nodejs.org/en/)
+- [expressjs](https://expressjs.com/)
+- [mongoDB](https://www.mongodb.com/)
+- [Heroku](https://heroku.com/)
+- [Google Maps API](https://developers.google.com/maps/documentation/javascript/)
+- [axios](https://github.com/axios/axios)
+- [react-google-maps](https://github.com/tomchentw/react-google-maps)
+
+----------
+
+React Router DOM v4
+-------------
 >
->You can see in the following example that logging ```a``` to the console outputs the value of ```undefined``` rather than an actual error.
+**BrowserRouter**
 >
-> ```
->// example js code
+> One of the high-level routers for client side React apps, that makes use of *HTML5 history API* to sync your UI with the current browser's url path (*i.e. window.location*).
 >
-> b();
->console.log(a);
->
->var a = 'Hello World';
->
->function b() {
->  console.log('Called b!');
->}
->
-> ```
->
->
->
->```
->// output of example code
->Called b!
->undefined
->```
+> If you are using a dynamic server that can handle dynamic URLs then you need to use the **BrowserRouter** component.
 >  
-
->
->**JavaScript and Undefined**
->
->Attempting to console.log a *variable* that is not defined at all will produce an error:.
->See the following code snippet:
->```
->console.log(a);
->```
->```
->// output
->Uncaught ReferenceError: a is not defined
->```
->
-
->
->**Undefined VS Not Defined**
->There is a big difference between the two.
->The *error* "Uncaught ReferenceError: a is not defined" means that you are attempting to access a variable that does not exists, i.e. *is not in memory*.
->But ```undefined``` is actually a special value (*key word*) with a specific meaning in JavaScript, internally.
->Basically all variables are created with the initial/default value of undefined, which means that the variable has yet to be defined.
->In the following code snippet you can see that the value ```undefined``` in action:
->```
->// code example
->
->var a;
->console.log(a);
->
->if (a === undefined) {
-> console.log('a is undefined!');
->} else {
->  console.log('a is defined!');
->}
->```
->```
->// output
->
->undefined
->a is undefined!
->```
->
-
->
->**The Execution Contex: CODE EXECUTION**
->
->The *Execution Context* runs the code you've written.
->Line by line.
->
->
-
-Single Threaded, Synchronous Execution
--------------
->
->**Single Threaded**
->*One command at a time.*
->Under the hood of the browser, maybe not.
->
-
->
->**Synchronous**
->*One at a time*
->And in order...
->
-
->
->Javascript is Synchronous and Single Threaded, in its behavior.
->
-
-Function Invocation And The Execution Stack
--------------
->
->**Invocation:**
->*Running/calling a function*
->In Javascript, by using parenthesis ().
->
-
->
->Take the following code example:
->```
->function b() {
+>  A good article that covers *BrowserRouter*: [React Router DOM v4 Tutorial](https://www.techiediaries.com/react-router-dom-v4/) by *Techiediaries*.
 >  
->}
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/BrowserRouter.md)
 >
->function a() {
->  b();
->}
+----------
 >
->a();
->```
+**Switch**
 >
->Q:*What is created when this is first run?*
->A:Global Execution Context (created and code is executed). The parser will parse the code. The compiler that will interpret your code will start up and create the global execution context (to create the vairable 'this', global object, etc...) in the creation phase. So ```function a()``` and ```function b()``` will be saved in memory. Then in the execution phase, nothing will happen for ```function a()``` or ```function b()```, but when it hits ```a();``` , it will call ```function a()``` . This is when a **new** execution context is created and placed on what's called **the execution stack**
+> Renders the first ```<Route``` or ```<Redirect>``` that matches the location.
+>  
+> ```<Switch>``` is unique in that it renders a route *exclusively*. In contrast, every ```<Route>``` that matches the location renders *inclusively*.
 >
->*Execution Stack*
->Execution context will created and will be placed on top of each other. And which ever one is on top is the one that is currently running.
->Every time a function is run in javaScript a new execution context is created and put on the *execution stack*.
->The *Execution Context* is created similar to the *Global Execution Context* and will have it's own space for variables and functions.
->It will go through the create phase, and then it will execute the code in the function line by line.
->However, if there is another function invocation, it will stop on that line of code, and create another *execution context* and run that code.
->This is how *function invocation* happens in javaScript.
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Switch.md)
 >
->In our example, when ```b();``` finishes because it's at the top of the stack. It will get *popped-off* the stack, then back to ```a()```, and finally back down to *global*.  
->Because the functions are in memory, it doesn't matter lexically where the function are in the code.
+----------
 >
+**Route**
+>
+> The *Route* component is perhaps the most important component in *React Router* to understand and learn the use well.
+>  
+> Its most basic responsibility is to render some UI when a location matches the route's ```path```.
+>
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/Route.md)
+>
+----------
+>
+**Link**
+> Provides declarative, accessible navigation around your application.
+>  
+>  **to:object**
+>  The *to* property in the **Link** component can accept an object that can have the following properties:
+>  - ```pathname```: A *string* representing the path to link to.
+>   - ```search```: A *string* represenation of query parameters.
+>    - ```hash```: A *hash* to put in the *URL*, e.g. ```#a-hash```.
+>   - ```state```: *State* to persist to the ```location```.
+>   ```
+>   // example
+>   <Link to={{
+>     pathname: '/courses',
+>     search: '?sort=name',
+>     hash: '#the-hash',  
+>     state: { fromDashboard: true }
+>   }}/>
+>   ```
+> [official documentation](https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/Link.md)
+>
+> In order to access this state in your component, you can use the ```this.props.location.state``` or ```this.props.history.location.state```
+>
+> Here is a stackoverflow article about [passing props with Link in React-Router](https://stackoverflow.com/questions/47287855/passing-props-with-link-in-react-router)
+>
+----------
 
-Functions, Context, and Variable Environments
+CSS
 -------------
+>  The Flexbox Layout Module, makes it easier to design flexible responsive layout structure without having to use floats or positioning.
 >
->**Variable Environment:**
->*Where the variables live*
->And how they relate to each other in memory.
->
-
->
->Take the following code snippet:
->```
->function b() {
- > var myVar;
->}
->
->function a() {
->  var myVar = 2;
->  b();
->}
->
->var myVar = 1;
->a();
->```
->
->*The Global Execution Context (created and code is executed)*, variable ```myVar```  is equal to ```1``` and put into memory space.
->The Global Execution context's **Variable Environment** is the *Global Object*, or *Window Object* in the browser.
->
->Then a new *Execution Context* is created for ```a();```, and ```var myVar = 2;``` will be put into the execution context's variable environment.
->*Every Execution Context will have its own Variable Environment*
->
->When ```b();``` is invoked, a new *execution context* will be created and added to the top of the stack. In this *execution context* ```var myVar;``` will have the value of ```undefined```.
->
->This has to do with **Scope**
->
->
-
-The Scope Chain
--------------
->
->*Take the following code-snippet:*
->```
->function b() {
->  console.log(myVar);
->}
->
->function a() {
->  var myVar = 2;
->  b();
->}
->
->var myVar = 1;
->a();
->```
->
->When we run this code in the browser and check the dev tools, we see ```console.log(myVar);``` output as:
->```
->1
->```
->
->Which is the value of ```myVar``` from the global level.
->In the Global Execution context ```myVar``` is ```1```, in ```a();```'s execution context ```myVar``` is ```2``` and in ```b();```'s execution context ```myVar``` simply does not exists in this variable environment.
->But when we request a variable, or do something with a variable, javascript will do more than just look in the current executing context's variable environment.
->Each execution context has a reference to it's outer environment. The outer environment for ```function b()``` is the *Global Execution Context*.
->Javascript cares about the *lexical environment* when it comes to the outer reference that every *execution context* gets.
->So, if it can't find a variable within an execution context, it will look at the outer reference for that variable there, somewhere down the execution stack.
->The *outer reference*, where that points, is going to depend on where the function sits lexically.
->Back to our snippet, because ```function b()``` sits lexically on the global execution context, its outer reference is global.
->
->**Scope** refers to where you can access a *variable*.
->
->The **Scope Chain** is the links of *outer environment references*.
->In our example with ```function b()```, it was looking for ```myVar``` in ```b();```, and continued down the *scope chain* to look for the variable.
->
+> [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) is a good article that goes over flexbox's main concepts.
+>   
+> Here is an article that contains several example use-cases, [CSS Flexbox Cheatsheet](https://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
 >
 
 >
->If we change the snippet to define ```function b()``` inside of ```function a()``` we see some changes to the *Scope Chain*:
->```
->function a() {
+>**flex-direction**
 >
->  function b() {
->    console.log(myVar);
->  }
+>The *flex-direction* property specifies the direction of the flexible items. **Note:** If the element is not a flexible item, the flex-direction property has no effect.
 >
->  var myVar = 2;
->  b();
->
->}
->
->var myVar = 1;
->a();
->```
->
->Now, when the code is ran and ```function b()``` is invoked, it will log ```myVar``` as ```2``` because ```b()```'s *outer reference* is ```function a()```, since we moved it into ```function a()```.
->
->
->Where something sits *physically* in your code (**lexically**). Is an easy way to find how something will be found along the *scope chain*.
->
->When something cannot be found, it will move further and further down the scope chain.
+>*Defult value:* row
 >
 
-SCOPE, ES6, and let
+>
+>**box-sizing**
+>
+>The ```box-sizing``` property allows us to include the padding and border in an element's total width and height.
+>
+>If you set ```box-sizing: border-box;``` on an element padding and border are included in the width and height.
+>  
+>
+
+Blocks
 -------------
 >  
->**Scope:**
->*Where a variable is available in your code*
->And if it's truly the same variable, or a new copy.
+**DataSF**
+> The data from the [DataSF](https://data.sfgov.org) api doesn't have an available id, which makes dealing with the show page a little bit more complicated. The ``` name ``` property seems to be unique among all the data, but might contain duplicates so querying the data might not be reliable.
 >
->**let**
->ES6 way of defining a variable. It uses **block scoping**, which will put the variable into memory during the create phase, but the javascript engine will not allow you use the variable until the line of code is run in the execution phase that actually declares the variable.
->
->Take the following code snippet:
->```
->if (a > b) {
->  let c = true;
->}
->
->```
->
->If you try to use the variable ```c``` before the line ```let c = true;``` it will throw an error, even through the variable ```c``` is in memory as ```undefined```.
->
->The other important thing, is that it is declared inside a block. A block is generally defined as curly braces ```{...}``` (e.g.: *if-statement*, *for-loop*, etc...). When that variable is defined inside that block, it is only available inside that block at that period of time for the running code.
->This is also true for *for-loops*, so if you have a *for-loop* with the same running code over and over, but you have a *let* statement. You will actually get a different variable in memory for every iteration the loop is running.
+>See request response:
+```
+// https://data.sfgov.org/resource/3ub7-d4yy.json?name=100 1st St
+[
+    {
+        "accessibil": "Indirect through lobby elevator?",
+        "art": "Yes",
+        "case_no": "1983.331",
+        "descriptio": "The large Sun Terrace features extensive landscaping and seating. Several art sculptures are featured, along with an elevated view of the street below. There is a 'grand' staircase (snippet) up to the Sun Terrace. Ground level arcade in front of building",
+        "food": "Y",
+        "food_servi": "At ground level",
+        "hours": "Ground level arcade space accessible at all times, Sun Terrace open during daylight hours.",
+        "hours_type": "Open At All Times",
+        "landscapin": "Trees and plants",
+        "location": "Sun Terrace is on second floor above adjoining parking garage SE of main building. Ground level arcade is on Mission Street side.",
+        "name": "100 1st St",
+        "popos_addr": "100 1st St",
+        "restrooms": "None observed",
+        "seating": "Y",
+        "seating_an": "Y",
+        "seating_no": "30 seats at 10 tables plus numerous areas to sit along built-in benches and planters, grassy areas.",
+        "source": "SPUR, DT Plan 2009, Motion",
+        "the_geom": {
+            "type": "Point",
+            "coordinates": [
+                -122.39797,
+                37.7891
+            ]
+        },
+        "type": "Sun Terrace, Indoor Park, Snippet",
+        "year": "1985"
+    }
+]
+```
 >
 
+**Google Maps**
+>
+> While building out the ```GoogleMap``` component, I received this error: ```'google' is not defined  no-undef```
+>
+> After looking online, I found that two different solutions seemed to resolve the issue:
+> - One: when adding ```/* eslint-disable no-undef */ ``` to the top of my ```GoogleMap``` component file, the error went away and successfully displayed the map.
+> - Two: When creating a new instance of the ```Map``` using ```new window.google.maps.Map()``` instead of ```new google.maps.Map()``` also resolved the error and displayed the map.
+>
+>
+>  Here is a [github issue](https://github.com/tomchentw/react-google-maps/issues/414)  that went over this problem.
+>
+>
+> Here is a [github issue](https://github.com/istarkov/google-map-react/issues/303) that addresses the error:
+> ```You have included the Google Maps API multiple times on this page. This may cause unexpected errors.```
+>  
+>
+
+
+----------
 
 Heroku
 -------------
@@ -365,9 +242,21 @@ Heroku
 >}
 >```
 >
->Basically the ```static.json``` file modifies Heroku's default webpack, so that it can handle client-side routing.
+> Basically the ```static.json``` file modifies Heroku's default webpack, so that it can handle client-side routing.
 >  
->Here is a good stackoverflow that provides a solution and explanation to [react routing works in local machine but not heroku](https://stackoverflow.com/questions/41772411/react-routing-works-in-local-machine-but-not-heroku)
+>  Here is a good stackoverflow that provides a solution and explanation to [react routing works in local machine but not heroku](https://stackoverflow.com/questions/41772411/react-routing-works-in-local-machine-but-not-heroku)
+----------
 >
 >This is also addressed in the *mars documentation* in [continue development](https://github.com/mars/create-react-app-buildpack#user-content-continue-development) under the section **Routing clean URLs**.
 >
+
+
+
+Helpful Links
+-------------
+>  
+> [DataSF](https://data.sfgov.org) (api)
+>
+>
+
+----------
