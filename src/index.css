@@ -250,4 +250,10 @@ header {
     font-size: 14px;
   }
 
+  .space-list {
+    height: 37%;
+    top: 420px;
+    width: 100%;
+  }
+
 }
