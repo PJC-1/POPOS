@@ -219,9 +219,14 @@ header {
     margin: 0;
   }
 
+  .space-wrapper {
+    margin: 0;
+  }
+
   .space-container {
     border-left: none;
     border-right: none;
+    padding: 0;
   }
 
   .space-side-div-two,
@@ -252,20 +257,10 @@ header {
   }
 
   .space-list {
-    height: 48%;
-    top: 280px;
+    height: 52%;
+    top: 260px;
     width: 100%;
     position: fixed;
   }
 
-}
-
-@media (orientation: landscape) {
-  body {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
 }
