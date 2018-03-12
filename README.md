@@ -134,6 +134,24 @@ CSS
 >
 
 >
+>**How to detect screen size change in ReactJS**
+>
+>Here is a helpful stackoverflow [post](https://stackoverflow.com/questions/44480053/how-to-detect-if-screen-size-has-changed-to-mobile-in-react) that deals with how to *detect if screen size has changed in React*.
+>
+> They provide this code snippet:
+>```
+>componentDidMount() {
+>    window.addEventListener("resize", this.resize.bind(this));
+>    this.resize();
+>}
+>
+>resize() {
+>    this.setState({hideNav: window.innerWidth <= 760});
+>}
+>```
+>
+
+>
 >**box-sizing**
 >
 >The ```box-sizing``` property allows us to include the padding and border in an element's total width and height.
