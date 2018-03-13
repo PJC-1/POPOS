@@ -15,7 +15,7 @@ class App extends Component {
       <div className="App">
         <div id="main" className="is-loading">
         	<h1>
-        		<Link to="/spaces">P.O.P.O.S.</Link>
+        		<Link to="/spaces" className="titleLink">P.O.P.O.S.</Link>
         	</h1>
         </div>
       </div>

@@ -9,7 +9,7 @@ const SpacesShow = props => {
   }
   return (
     <div>
-      <Link to="/spaces">
+      <Link to="/spaces" className="backLink">
         back
       </Link>
       <SpaceShowDetail space={props.location.state.space} />

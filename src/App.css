@@ -9,7 +9,7 @@
 	align-items: center;
 }
 
-a {
+.titleLink {
   text-decoration: none;
   color: white;
 }
