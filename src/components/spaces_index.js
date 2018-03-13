@@ -10,9 +10,9 @@ class SpacesIndex extends Component {
     this.state = {
       spaces: null,
       styleID: 'map',
-      zoom: 14,
+      zoom: 15,
       zoomDeskTop: 16,
-      center: [37.78, -122.404],
+      center: [37.786, -122.397],
       centerDeskTop: [37.7865, -122.406]
     };
   }
