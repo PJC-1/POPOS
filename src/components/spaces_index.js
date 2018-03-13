@@ -11,7 +11,9 @@ class SpacesIndex extends Component {
       spaces: null,
       styleID: 'map',
       zoom: 14,
-      center: [37.78, -122.404]
+      zoomDeskTop: 16,
+      center: [37.78, -122.404],
+      centerDeskTop: [37.7865, -122.406]
     };
   }
 
@@ -34,12 +36,22 @@ class SpacesIndex extends Component {
     if (!this.state.spaces) {
       return <div>Loading...</div>
     }
-    return (
-      <div>
-        <SpaceList spaces={this.state.spaces}/>
-        <Map markers={this.state.spaces} style={this.state.styleID} center={this.state.center} zoom={this.state.zoom}/>
-      </div>
-    );
+    const isMobile = window.innerWidth <= 650;
+    if (isMobile) {
+      return (
+        <div>
+          <SpaceList spaces={this.state.spaces}/>
+          <Map markers={this.state.spaces} style={this.state.styleID} center={this.state.center} zoom={this.state.zoom}/>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <SpaceList spaces={this.state.spaces}/>
+          <Map markers={this.state.spaces} style={this.state.styleID} center={this.state.centerDeskTop} zoom={this.state.zoomDeskTop}/>
+        </div>
+      );
+    }
   }
 }
 
