@@ -17,17 +17,18 @@ export default class Map extends Component {
       styles: customMapStyle
     }
   }
-render() {
-  console.log(this.props);
-  if (this.props.markers) {
-    const Markers = this.props.markers.map((marker, index) => (
+
+  render() {
+    console.log(this.props);
+    if (this.props.markers) {
+      const Markers = this.props.markers.map((marker, index) => (
       <Marker
         // required props
         key={marker.name}
         lat={marker.the_geom.coordinates[1]}
         lng={marker.the_geom.coordinates[0]}
         marker={marker} />
-    ));
+      ));
       return (
         <div id="map" className='google-map'>
           <GoogleMapReact
@@ -40,7 +41,7 @@ render() {
           </GoogleMapReact>
         </div>
       )
-  } else if (this.props.marker) {
+    } else if (this.props.marker) {
 
       return (
         <div id={this.props.style}>
@@ -55,10 +56,9 @@ render() {
               lat={this.props.marker.the_geom.coordinates[1]}
               lng={this.props.marker.the_geom.coordinates[0]}
               marker={this.props.marker} />
-          </GoogleMapReact>
-        </div>
-      )
-  }
-
+            </GoogleMapReact>
+          </div>
+        )
+    }
   }
 }

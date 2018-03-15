@@ -16,9 +16,6 @@ const SpaceList = props => {
 
   return (
     <div>
-      <Link to="/">
-        Home
-      </Link>
       <ul className="space-list">
         {spaceItems}
       </ul>
