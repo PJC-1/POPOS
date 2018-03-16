@@ -19,6 +19,7 @@ export default class Map extends Component {
   }
 
   render() {
+
     console.log(this.props);
     if (this.props.markers) {
       const Markers = this.props.markers.map((marker, index) => (
@@ -32,11 +33,12 @@ export default class Map extends Component {
       return (
         <div id="map" className='google-map'>
           <GoogleMapReact
-            bootstrapURLKeys={{ key: {GOOGLE_MAP_API_KEY} }}
+            bootstrapURLKey={{ key: {GOOGLE_MAP_API_KEY} }}
             defaultCenter={ this.props.center }
             defaultZoom={ this.props.zoom }
             options={ this.props.options }
-            onClick={onClick}>
+            onClick={onClick}
+          >
             {Markers}
           </GoogleMapReact>
         </div>
@@ -49,7 +51,8 @@ export default class Map extends Component {
             bootstrapURLKeys={{ key: {GOOGLE_MAP_API_KEY} }}
             defaultCenter={ this.props.center }
             defaultZoom={ this.props.zoom }
-            options={ this.props.options }>
+            options={ this.props.options }
+          >
             <Marker
               // required props
               key={this.props.marker.name}
